@@ -1,0 +1,29 @@
+<h1>Welcome To Admin portal</h1>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>ProductID</th>
+            <th>medicineName</th>
+            <th>medicineDetails</th>
+            <th>uses</th>
+            <th>safetyInformation</th>
+            <th>operations</th>
+            <th>activate/deactivate</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products">
+            <td>{{product.productId}}</td>
+            <td>{{product.medicineName}}</td>
+            <td>{{product.medicineDetails}}</td>
+            <td>{{product.uses}}</td>
+            <td>{{product.safetyInformation}}</td>
+            <td><a routerLink="/details/{{product.productId}}"><button class="btn btn-success">view</button></a>
+            &nbsp;
+            <button class="btn btn-danger" (click)="onDelete(product.productId)">Delete</button>
+            </td>
+            <td>            <button>activate/deactivate</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
